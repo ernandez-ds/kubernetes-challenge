@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  NAME: Ernandez
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: var-config

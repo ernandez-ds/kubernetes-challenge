@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: challenges
+  name: challenges
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: challenges
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: challenges
+    spec:
+      containers:
+      - image: localhost:5000/challenges
+        name: challenges
+        resources: {}
+        env:
+         - name: NAME
+           valueFrom:
+            configMapKeyRef:
+              name: var-config
+              key: NAME  
+status: {}
